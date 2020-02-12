@@ -1,0 +1,107 @@
+﻿<style>
+    #topBar {
+        height: 29px;
+        /*border:3px solid black;*/
+        margin: 0px;
+        background-color: #333;
+
+    }
+
+    #handle {
+        -webkit-app-region: drag;
+        width: calc(100% - 174px);
+        height: 29px;
+        position: absolute;
+        z-index: 998;
+    }
+
+    .header-button {
+        height: 29px;
+        width: 58px;
+        background-color: #333;
+        color: black;
+        border-radius: 0%;
+        border: none;
+        outline: none;
+        float: right;
+        font-size: 12pt
+    }
+
+    #MM {
+        background-image: url("img/maximize.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #333;
+        /*background-color: #222;*/
+    }
+
+
+
+    #MM:hover {
+        background-color: #222;
+        /* background-color: #F7F7F7; */
+    }
+
+
+    #MINM {
+        background-image: url("img/minimize.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #333;
+        /*background-color: #222;*/
+    }
+
+    #MINM:hover {
+        background-color: #222;
+        /* background-color: #F7F7F7; */
+    }
+
+    #X {
+        /*background-color: #222;*/
+        background-image: url("img/close.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #333;
+        /*background-color: #222;*/
+    }
+
+    #X:hover {
+        background-color: red;
+    }
+
+    #titleBar {
+        color: white;
+        text-align: center;
+        width: 100%;
+        margin: auto;
+        font-family: Verdana, sans-serif;
+        font-size: 12px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        line-height: 29px;
+    }
+</style>
+<header id="topBar">
+    <div id="handle">
+        <div id="titleBar"></div>
+    </div>
+    <div class="header-buttons">
+        <button id="X" class="header-button" onclick="quit()"></button>
+        <button id="MINM" class="header-button" onclick="minimize()"></button>
+    </div>
+</header>
+<script>
+    const ipc = require('electron').ipcRenderer;
+    function quit() {
+        ipc.send("close");
+    }
+    function minimize() {
+        //ipc.send("minimize");
+        const { remote } = require('electron')
+        remote.BrowserWindow.getFocusedWindow().minimize();
+    }
+    document.getElementById("titleBar").innerHTML = document.getElementById("title").innerHTML;
+
+</script>

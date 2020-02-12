@@ -1,0 +1,8 @@
+.triangle-top-left {
+  width: 0;
+  height: 150vh;
+  border-top: 100vw solid #222;
+  border-right: 100vh solid transparent;
+  overflow: hidden;
+}
+/*# sourceMappingURL=main.css.map */

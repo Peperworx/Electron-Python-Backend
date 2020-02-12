@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title id="title">Launcher Test</title>
+    <style>
+        body {
+            margin: 0px;
+            background-color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="titlebar"></div>
+    <h2>wee</h2>
+
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="/dep/jquery.js"></script>
+    <script src="/dep/noty/noty.js"></script>
+    <script src="/dep/slick/slick.js"></script>
+    <script src="/dep/iziModal-master/js/iziModal.min.js"></script>
+    <script src="/dep/bootstrap/js/bootstrap.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/custom-titlebar/titlebar.js"></script>
+    <script>
+        if (window.module) {
+            module = window.module;
+        }
+    </script>
+</body>
+
+</html>
