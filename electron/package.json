@@ -10,11 +10,11 @@
   "author": "Riley Wilton",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^7.1.1",
+    "electron": "^7.2.4",
     "electron-prebuilt": "^1.4.13"
   },
   "dependencies": {
-    "electron": "^7.1.1",
+    "electron": "^7.2.4",
     "electron-prebuilt": "^1.4.13"
   }
 }
